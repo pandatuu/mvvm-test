@@ -7,6 +7,10 @@ plugins {
     id("kotlin-kapt")
 }
 
+kapt {
+    correctErrorTypes = true
+}
+
 android {
     compileSdkVersion(29)
     buildToolsVersion("29.0.2")
@@ -46,11 +50,76 @@ dependencies {
     implementation(thirdPartyLibraries["ktxCoroutinesAndroid"] ?: error(""))
 
     // AndroidX
-    implementation(thirdPartyLibraries["appCompat"] ?: error(""))
-    implementation(thirdPartyLibraries["recyclerView"] ?: error(""))
-    implementation(thirdPartyLibraries["cardView"] ?: error(""))
-    implementation(thirdPartyLibraries["constraintLayout"] ?: error(""))
-    implementation(thirdPartyLibraries["coreKtx"] ?: error(""))
-    implementation(thirdPartyLibraries["fragmentKtx"] ?: error(""))
-    implementation(thirdPartyLibraries["lifecycleViewModelKtx"] ?: error(""))
+    implementation(thirdPartyLibraries["androidxCore"] ?: error(""))
+    implementation(thirdPartyLibraries["androidxLifecycle"] ?: error(""))
+    implementation(thirdPartyLibraries["androidxLifecycleLiveData"] ?: error(""))
+    implementation(thirdPartyLibraries["androidxLifecycleViewModel"] ?: error(""))
+    kapt(thirdPartyLibraries["androidxLifecycleCompiler"] ?: error(""))
+    implementation(thirdPartyLibraries["androidxRoom"] ?: error(""))
+    implementation(thirdPartyLibraries["androidxRoomRxJava"] ?: error(""))
+    kapt(thirdPartyLibraries["androidxRoomCompiler"] ?: error(""))
+    implementation(thirdPartyLibraries["androidxAppCompat"] ?: error(""))
+    implementation(thirdPartyLibraries["androidxRecyclerView"] ?: error(""))
+    implementation(thirdPartyLibraries["androidxCardView"] ?: error(""))
+    implementation(thirdPartyLibraries["androidxConstraintLayout"] ?: error(""))
+    implementation(thirdPartyLibraries["androidxCoreKtx"] ?: error(""))
+    implementation(thirdPartyLibraries["androidxFragmentKtx"] ?: error(""))
+    implementation(thirdPartyLibraries["androidxLifecycleViewModelKtx"] ?: error(""))
+
+    // RxJava
+    implementation(thirdPartyLibraries["rxJava"] ?: error(""))
+    implementation(thirdPartyLibraries["rxAndroid"] ?: error(""))
+    implementation(thirdPartyLibraries["rxKotlin"] ?: error(""))
+
+    // JSON
+    implementation(thirdPartyLibraries["jsoniter"] ?: error(""))
+
+    // Glide
+    implementation(thirdPartyLibraries["glide"] ?: error(""))
+    kapt(thirdPartyLibraries["glideCompiler"] ?: error(""))
+    implementation(thirdPartyLibraries["glideOkHttp3"] ?: error(""))
+    implementation(thirdPartyLibraries["glideRecyclerView"] ?: error("")) {
+        // Excludes the support library because it's already included by Glide.
+        isTransitive = false
+    }
+
+    // OkHttp & Retrofit
+    implementation(thirdPartyLibraries["okHttp"] ?: error(""))
+    implementation(thirdPartyLibraries["okHttpLogging"] ?: error(""))
+    implementation(thirdPartyLibraries["stethoOkHttp"] ?: error(""))
+    implementation(thirdPartyLibraries["retrofit"] ?: error(""))
+    implementation(thirdPartyLibraries["retrofitAdapterRxJava"] ?: error(""))
+    implementation(thirdPartyLibraries["retrofitConverterScalars"] ?: error(""))
+    implementation(thirdPartyLibraries["retrofitConverterJsoniter"] ?: error("")) {
+        exclude(module = "okhttp")
+        exclude(module = "okio")
+        exclude(module = "retrofit")
+    }
+    implementation(thirdPartyLibraries["retrofitUrlManager"] ?: error(""))
+
+    // Koin
+    implementation(thirdPartyLibraries["koinAndroid"] ?: error(""))
+    implementation(thirdPartyLibraries["koinAndroidxScope"] ?: error(""))
+    implementation(thirdPartyLibraries["koinAndroidxViewModel"] ?: error(""))
+
+    // Suas-Android
+    implementation(thirdPartyLibraries["suas"] ?: error(""))
+    implementation(thirdPartyLibraries["suasThunk"] ?: error(""))
+    implementation(thirdPartyLibraries["suasLogger"] ?: error(""))
+    implementation(thirdPartyLibraries["suasMonitor"] ?: error(""))
+
+    // MMKV
+    implementation(thirdPartyLibraries["mmkv"] ?: error(""))
+
+    // MvRx
+    implementation(thirdPartyLibraries["mvrx"] ?: error(""))
+    // Epoxy
+    implementation(thirdPartyLibraries["epoxy"] ?: error(""))
+    kapt(thirdPartyLibraries["epoxyProcessor"] ?: error(""))
+    // Paris
+    implementation(thirdPartyLibraries["paris"] ?: error(""))
+    kapt(thirdPartyLibraries["parisProcessor"] ?: error(""))
+
+    // Utils
+    implementation(thirdPartyLibraries["utilCode"] ?: error(""))
 }
