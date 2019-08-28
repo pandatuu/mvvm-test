@@ -44,6 +44,8 @@ dependencies {
 
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
+    implementation(project(":lib"))
+
     // Kotlin
     implementation(kotlin("stdlib-jdk8"))
     implementation(thirdPartyLibraries["ktxCoroutines"] ?: error(""))
@@ -122,4 +124,9 @@ dependencies {
 
     // Utils
     implementation(thirdPartyLibraries["utilCode"] ?: error(""))
+
+    // Test
+    testImplementation(thirdPartyLibraries["junit"] ?: error(""))
+    androidTestImplementation(thirdPartyLibraries["androidxTestRunner"] ?: error(""))
+    androidTestImplementation(thirdPartyLibraries["androidxTestEspresso"] ?: error(""))
 }

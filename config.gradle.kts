@@ -127,6 +127,13 @@ val thirdPartyLibraries: Map<String, String> by extra(mapOf(
     // Utils
     "utilCode" to "com.blankj:utilcode:1.23.7",
 
+    // JUnit
+    "junit" to "junit:junit:4.12",
+
+    // AndroidX Test
+    "androidxTestRunner" to "androidx.test:runner:1.2.0",
+    "androidxTestEspresso" to "androidx.test.espresso:espresso-core:3.2.0",
+
     // 占位（新库请添加到前面）
     "" to ""
 ))

@@ -1,3 +1,3 @@
 rootProject.name = "MvRxIcecream"
 
-include("app")
+include("app", "lib")
