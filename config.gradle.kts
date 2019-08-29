@@ -7,6 +7,7 @@ private val okHttpVersion = "4.1.0"
 private val stethoVersion = "1.5.1"
 private val retrofitVersion = "2.6.1"
 private val koinVersion = "2.0.1"
+private val kodeinVersion = "6.3.3"
 private val suasVersion = "1.2.0"
 private val mmkvVersion = "1.0.22"
 private val epoxyVersion = "3.7.0"
@@ -78,6 +79,11 @@ val thirdPartyLibraries: Map<String, String> by extra(mapOf(
     "koinAndroid" to "org.koin:koin-android:$koinVersion",
     "koinAndroidxScope" to "org.koin:koin-androidx-scope:$koinVersion",
     "koinAndroidxViewModel" to "org.koin:koin-androidx-viewmodel:$koinVersion",
+
+    // Kodein
+    "kodeinGeneric" to "org.kodein.di:kodein-di-generic-jvm:$kodeinVersion",
+    "kodeinErased" to "org.kodein.di:kodein-di-erased-jvm:$kodeinVersion",
+    "kodeinAndroidx" to "org.kodein.di:kodein-di-framework-android-x:$kodeinVersion",
 
     // Suas-Android
     "suas" to "com.zendesk.suas:suas:$suasVersion",
