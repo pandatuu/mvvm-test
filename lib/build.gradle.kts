@@ -98,11 +98,6 @@ dependencies {
     }
     implementation(thirdPartyLibraries["retrofitUrlManager"] ?: error(""))
 
-    // Koin
-    implementation(thirdPartyLibraries["koinAndroid"] ?: error(""))
-    implementation(thirdPartyLibraries["koinAndroidxScope"] ?: error(""))
-    implementation(thirdPartyLibraries["koinAndroidxViewModel"] ?: error(""))
-
     // Suas-Android
     implementation(thirdPartyLibraries["suas"] ?: error(""))
     implementation(thirdPartyLibraries["suasThunk"] ?: error(""))
@@ -129,4 +124,3 @@ dependencies {
     androidTestImplementation(thirdPartyLibraries["androidxTestRunner"] ?: error(""))
     androidTestImplementation(thirdPartyLibraries["androidxTestEspresso"] ?: error(""))
 }
-
