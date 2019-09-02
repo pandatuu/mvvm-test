@@ -12,7 +12,7 @@ private val suasVersion = "1.2.0"
 private val mmkvVersion = "1.0.22"
 private val epoxyVersion = "3.7.0"
 private val parisVersion = "1.3.0"
-private val fragmentationVersion = "1.3.7"
+private val fragmentationxVersion = "1.0.1"
 private val smartRefreshLayoutVersion = "1.1.0"
 private val basePopupVersion = "2.2.1"
 private val immersionBarVersion = "3.0.0-beta06-3"
@@ -99,15 +99,19 @@ val thirdPartyLibraries: Map<String, String> by extra(mapOf(
     "mvrx" to "com.airbnb.android:mvrx:1.0.2",
     // Epoxy
     "epoxy" to "com.airbnb.android:epoxy:$epoxyVersion",
+    "epoxyDatabinding" to "com.airbnb.android:epoxy-databinding:$epoxyVersion",
+    "epoxyGlidePreloading" to "com.airbnb.android:epoxy-glide-preloading:$epoxyVersion",
+    "epoxyPaging" to "com.airbnb.android:epoxy-paging:$epoxyVersion",
+    "epoxyLitho" to "com.airbnb.android:epoxy-litho:$epoxyVersion",
     "epoxyProcessor" to "com.airbnb.android:epoxy-processor:$epoxyVersion",
     // Paris
     "paris" to "com.airbnb.android:paris:$parisVersion",
     "parisProcessor" to "com.airbnb.android:paris-processor:$parisVersion",
 
     // Fragmentation
-    "fragmentation" to "me.yokeyword:fragmentation:$fragmentationVersion",
-    "fragmentationCore" to "me.yokeyword:fragmentation-core:$fragmentationVersion",
-    "fragmentationSwipeback" to "me.yokeyword:fragmentation-swipeback:$fragmentationVersion",
+    "fragmentationx" to "me.yokeyword:fragmentationx:$fragmentationxVersion",
+    "fragmentationxCore" to "me.yokeyword:fragmentationx-core:$fragmentationxVersion",
+    "fragmentationxSwipeback" to "me.yokeyword:fragmentationx-swipeback:$fragmentationxVersion",
 
     // ARouter
     "arouter" to "com.alibaba:arouter-api:1.5.0",

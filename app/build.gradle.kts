@@ -28,10 +28,15 @@ android {
         named("release") {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                    getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro"
             )
         }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     dataBinding {
@@ -45,6 +50,7 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
     implementation(project(":lib"))
+    implementation(project(":koin"))
 
     // Kotlin
     implementation(kotlin("stdlib-jdk8"))
@@ -117,10 +123,14 @@ dependencies {
     implementation(thirdPartyLibraries["mvrx"] ?: error(""))
     // Epoxy
     implementation(thirdPartyLibraries["epoxy"] ?: error(""))
+    implementation(thirdPartyLibraries["epoxyDatabinding"] ?: error(""))
     kapt(thirdPartyLibraries["epoxyProcessor"] ?: error(""))
     // Paris
     implementation(thirdPartyLibraries["paris"] ?: error(""))
     kapt(thirdPartyLibraries["parisProcessor"] ?: error(""))
+
+    // Fragmentation
+    implementation(thirdPartyLibraries["fragmentationx"] ?: error(""))
 
     // Utils
     implementation(thirdPartyLibraries["utilCode"] ?: error(""))
