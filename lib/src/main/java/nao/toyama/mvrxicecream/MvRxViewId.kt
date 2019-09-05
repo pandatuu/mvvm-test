@@ -7,7 +7,9 @@ import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
 class MvRxViewId : ReadOnlyProperty<MvRxView, String> {
+
     companion object {
+        
         private const val PERSISTED_VIEW_ID_KEY = "mvrx:persisted_view_id"
     }
 
