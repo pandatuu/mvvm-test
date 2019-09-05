@@ -9,11 +9,14 @@ import nao.toyama.mvrxicecream.http.HttpSettings
 import nao.toyama.mvrxicecream.http.interceptors.HeadersInterceptor
 import retrofit2.Converter
 import retrofit2.converter.scalars.ScalarsConverterFactory
-import zendesk.suas.*
+
+typealias DIProvider = nao.toyama.mvrxicecream.di.Provider
+typealias UDDFProvider<T> = nao.toyama.mvrxicecream.uddf.Provider<T>
 
 abstract class BaseApplication : Application() {
 
-    lateinit var store: Store
+    var diProvider: DIProvider? = null
+    var uddfProvider: UDDFProvider<*>? = null
 
     // 基础 HTTP URL
     open val baseHttpUrl: String
@@ -28,7 +31,7 @@ abstract class BaseApplication : Application() {
 
         initHttpClient()
 
-        initUDDFStore()
+        initUDDF()
 
         initFragmentation()
     }
@@ -98,22 +101,9 @@ abstract class BaseApplication : Application() {
     open fun getHttpJsonConverterFactory(): Converter.Factory? =
         JsoniterConverterFactory.create()
 
-    // 初始化单向数据流仓库
-    open fun initUDDFStore() {
-        store = Suas.createStore(getUDDFReducers())
-            .withMiddleware(getUDDFMiddlewares())
-            .build()
+    // 初始化单向数据流
+    open fun initUDDF() {
     }
-
-    // 获取单向数据流缩减器
-    open fun getUDDFReducers(): List<Reducer<*>> = listOf()
-
-    // 获取单向数据流中间件
-    open fun getUDDFMiddlewares(): List<Middleware> = listOf(
-        AsyncMiddleware(),
-        LoggerMiddleware()//,
-//        MonitorMiddleware(this)
-    )
 
     // 初始化 Fragmentation
     open fun initFragmentation() {
