@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/kodein" />
             <option value="$PROJECT_DIR$/koin" />
             <option value="$PROJECT_DIR$/lib" />
+            <option value="$PROJECT_DIR$/suas" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

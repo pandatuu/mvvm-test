@@ -16,7 +16,7 @@ android {
     buildToolsVersion("29.0.2")
 
     defaultConfig {
-        applicationId = "nao.toyama.mvrxicecream"
+        applicationId = "nao.toyama.mvrxicecream.app"
         setMinSdkVersion(21)
         setTargetSdkVersion(29)
         versionCode = 1
@@ -51,6 +51,8 @@ dependencies {
 
     implementation(project(":lib"))
     implementation(project(":koin"))
+    implementation(project(":suas"))
+    implementation(project(":fragmentation"))
 
     // Kotlin
     implementation(kotlin("stdlib-jdk8"))
@@ -131,6 +133,13 @@ dependencies {
 
     // Fragmentation
     implementation(thirdPartyLibraries["fragmentationx"] ?: error(""))
+
+    // Views
+    implementation(thirdPartyLibraries["smartRefreshLayout"] ?: error(""))
+    implementation(thirdPartyLibraries["smartRefreshHeader"] ?: error(""))
+    implementation(thirdPartyLibraries["immersionBar"] ?: error(""))
+    implementation(thirdPartyLibraries["immersionBarComponents"] ?: error(""))
+    implementation(thirdPartyLibraries["immersionBarKtx"] ?: error(""))
 
     // Utils
     implementation(thirdPartyLibraries["utilCode"] ?: error(""))

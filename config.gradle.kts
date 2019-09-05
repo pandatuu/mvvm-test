@@ -15,7 +15,7 @@ private val parisVersion = "1.3.0"
 private val fragmentationxVersion = "1.0.1"
 private val smartRefreshLayoutVersion = "1.1.0"
 private val basePopupVersion = "2.2.1"
-private val immersionBarVersion = "3.0.0-beta06-3"
+private val immersionBarVersion = "3.0.0-beta05"
 
 val thirdPartyLibraries: Map<String, String> by extra(mapOf(
     // KotlinX

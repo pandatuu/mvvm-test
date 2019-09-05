@@ -103,12 +103,6 @@ dependencies {
     }
     implementation(thirdPartyLibraries["retrofitUrlManager"] ?: error(""))
 
-    // Suas-Android
-    implementation(thirdPartyLibraries["suas"] ?: error(""))
-    implementation(thirdPartyLibraries["suasThunk"] ?: error(""))
-    implementation(thirdPartyLibraries["suasLogger"] ?: error(""))
-    implementation(thirdPartyLibraries["suasMonitor"] ?: error(""))
-
     // MMKV
     implementation(thirdPartyLibraries["mmkv"] ?: error(""))
 
