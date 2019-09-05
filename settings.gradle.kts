@@ -1,3 +1,3 @@
 rootProject.name = "MvRxIcecream"
 
-include("app", "lib", "koin", "kodein")
+include("app", "lib", "koin", "kodein", "fragmentation")
