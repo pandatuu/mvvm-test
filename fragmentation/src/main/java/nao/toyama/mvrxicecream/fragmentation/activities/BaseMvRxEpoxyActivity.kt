@@ -1,12 +1,11 @@
-package nao.toyama.mvrxicecream.fragments
+package nao.toyama.mvrxicecream.fragmentation.activities
 
 import android.os.Bundle
-import android.view.View
 import com.airbnb.epoxy.EpoxyController
 import com.airbnb.epoxy.EpoxyRecyclerView
 import nao.toyama.mvrxicecream.extensions.isNotTyped
 
-abstract class BaseMvRxEpoxyFragment<C : EpoxyController> : BaseMvRxFragment() {
+abstract class BaseMvRxEpoxyActivity<C : EpoxyController> : BaseMvRxActivity() {
 
     protected lateinit var recyclerView: EpoxyRecyclerView
     protected val epoxyController: C by lazy { epoxyController() }
@@ -15,12 +14,8 @@ abstract class BaseMvRxEpoxyFragment<C : EpoxyController> : BaseMvRxFragment() {
         super.onCreate(savedInstanceState)
 
         epoxyController.onRestoreInstanceState(savedInstanceState)
-    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        postViewCreated()
+        postCreate()
 
         recyclerView.setController(epoxyController)
     }
@@ -39,5 +34,5 @@ abstract class BaseMvRxEpoxyFragment<C : EpoxyController> : BaseMvRxFragment() {
 
     abstract fun epoxyController(): C
 
-    abstract fun postViewCreated()
+    abstract fun postCreate()
 }

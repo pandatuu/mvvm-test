@@ -1,4 +1,4 @@
-package nao.toyama.mvrxicecream.fragments
+package nao.toyama.mvrxicecream.fragmentation.fragments
 
 import android.os.Bundle
 import android.view.View
